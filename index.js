@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid')
 const startButton = document.getElementById('start')
 const scoreDisplay = document.getElementById('score')
+const gameOver = document.getElementById('game-over')
 let squares = []
 let currentSnake = [2,1,0]
 let direction = 1
@@ -37,6 +38,7 @@ function startGame() {
     currentSnake = [2,1,0]
     score = 0
     //re add new score to browser
+    gameOver.style.display = 'none'
     scoreDisplay.textContent = score
     direction = 1
     intervalTime = 1000
@@ -53,9 +55,9 @@ function move() {
         (currentSnake[0] % width === 0 && direction === -1) || //if snake has hit left wall
         (currentSnake[0] - width < 0 && direction === -width) || //if snake has hit top
         squares[currentSnake[0] + direction].classList.contains('snake')
+        // gameOver.style.display = 'block'
     )
-    return clearInterval(timerId)
-
+    return clearInterval(timerId), gameOver.style.display = 'block'
     //remove last element from our currentSnake array
     const tail = currentSnake.pop()
     //remove styling from last element

@@ -1,6 +1,23 @@
 html, body {
     margin: 10;
     padding: 10;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Road Rage', cursive;
+    letter-spacing: 2px;
+    background-color: #c1ff7a;
+}
+
+body, h1, h2 {
+    align-self: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
 }
 
 .grid {
@@ -8,7 +25,11 @@ html, body {
     flex-wrap: wrap;
     width: 200px;
     height: 200px;
-    border: solid 2px black;
+    /* border: solid 2px black; */
+    border-radius: 0.5rem;
+    background-color: #b88947;
+    padding: 4px;
+    box-shadow: 0px 0px 10px #000;
 }
 
 .square {
@@ -22,4 +43,31 @@ html, body {
 
 .apple::after {
     content: '🍎'
+}
+
+button {
+    border: none;
+    background-image: linear-gradient(to bottom right, #fe613e, #00299e);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: 'Road Rage', cursive;
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    box-shadow: 0px 0px 10px #000;
+    cursor: pointer;
+}
+
+button:active {
+    background-image: linear-gradient(to bottom right, #00299e, #fe613e);
+}
+
+.game-area {
+    position: relative;
+}
+#game-over {
+    position: absolute;
+    display: none;
+    top: 25%;
+    left: 25%;
 }
